@@ -1,0 +1,23 @@
+/*field input có label*/
+.label-field-input {
+    display: block;
+}
+/*chỉnh label*/
+.label-field-input > label {
+    flex-basis: 100%;
+    font-size: 12px;
+    font-weight: 700;
+    margin-bottom: 4px;
+    display: block;
+}
+
+/*Thêm dấu * sau class label-required*/
+.label-field-input > .label-required:after {
+    content: " (*)";
+    color: red;
+}
+
+/*viền đỏ*/
+.input-border-red {
+    border-color: #f65454 !important;
+}

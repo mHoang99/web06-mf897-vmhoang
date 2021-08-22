@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "3aRuCXVWlvpm2ZAnxFW6fw1mR4WXyotGeyCxg+O5TDylLcYCQFAZikGsCtyLH68JHeGRcOMhSZEUXHz5wmKFlg==",
+  "success": true,
+  "projectFilePath": "D:\\Projects\\MISA\\GD1\\MISA.TRAINING.AMIS.BE\\MISA.TRAINING.AMIS\\MISA.ApplicationCore\\MISA.ApplicationCore.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\mHoang\\.nuget\\packages\\libphonenumber-csharp\\8.12.28\\libphonenumber-csharp.8.12.28.nupkg.sha512",
+    "C:\\Users\\mHoang\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\5.0.0\\microsoft.extensions.configuration.abstractions.5.0.0.nupkg.sha512",
+    "C:\\Users\\mHoang\\.nuget\\packages\\microsoft.extensions.primitives\\5.0.0\\microsoft.extensions.primitives.5.0.0.nupkg.sha512",
+    "C:\\Users\\mHoang\\.nuget\\packages\\system.collections.immutable\\1.7.1\\system.collections.immutable.1.7.1.nupkg.sha512"
+  ],
+  "logs": []
+}

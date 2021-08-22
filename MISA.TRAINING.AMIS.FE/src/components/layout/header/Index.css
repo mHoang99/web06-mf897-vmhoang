@@ -1,0 +1,97 @@
+.header {
+    height: 48px;
+    display: flex;
+    flex: 1;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 16px;
+    padding-left: 12px;
+}
+
+.header > div:first-child {
+    display: flex;
+    align-items: center;
+}
+
+.header .icon-toggle {
+    cursor: pointer;
+    margin-right: 20px;
+}
+
+@media (max-width: 1300px) {
+    .header-branch-name {
+        max-width: 160px;
+    }
+}
+
+@media (max-width: 1366px) {
+    .header-branch-name {
+        max-width: 200px;
+    }
+}
+
+@media (max-width: 1440px) {
+    .header-branch-name {
+        max-width: 300px;
+    }
+}
+
+@media (max-width: 1680px) {
+    .header-branch-name {
+        max-width: 450px;
+    }
+}
+
+.header .header-branch-name {
+    padding-left: 0px;
+    overflow: hidden;
+    white-space: nowrap;
+    font-weight: 600;
+    max-width: 600px;
+    text-overflow: ellipsis;
+    transition: all 0.2s ease;
+    font-size: 14px;
+    color: #111;
+    line-height: 48px;
+    text-transform: uppercase;
+}
+
+.header .header-branch-option {
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+/*account info*/
+.header .account-info {
+    display: flex;
+}
+
+.header .account-info .account-bell {
+    margin: auto 0;
+    margin-right: 16px;
+}
+
+.header .account-info .account-avatar {
+    background-image: url("../../../assets/img/default-avatar.jpg");
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    margin: auto 0;
+    margin-right: 10px;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.header .account-info .account-name {
+    height: 30px;
+    line-height: 30px;
+    margin: auto 0;
+    margin-right: 10px;
+    color: #111111;
+    font-weight: 600;
+}
+
+.header .account-info .account-option {
+    margin: auto 0;
+    margin-right: 10px;
+}

@@ -1,0 +1,193 @@
+.sprite {
+    background: url("../../../assets/img/Sprites.svg") no-repeat;
+}
+
+.icon-menu {
+    background-position: -428px -92px;
+    width: 16px;
+    height: 16px;
+}
+
+.icon-bell {
+    background-position: -844px -520px;
+    width: 18px;
+    height: 19px;
+}
+
+.icon-toggle {
+    background-position: -847px -35px;
+    width: 16px;
+    height: 16px;
+}
+
+.icon-refresh {
+    background-position: -425px -201px;
+    width: 21px;
+    height: 23px;
+}
+
+.icon-search {
+    background-position: -992px -360px;
+    width: 16px;
+    height: 16px;
+}
+
+.icon-test {
+    background-position: -512px -408px;
+    width: 16px;
+    height: 16px;
+}
+
+.icon-calendar {
+    background-position: -128px -312px;
+    width: 16px;
+    height: 16px;
+}
+
+.icon-chevron-down {
+    background-position: -84px -361px;
+    width: 8px;
+    height: 14px;
+    transform: rotate(90deg);
+}
+
+.icon-arrow-down {
+    background-position: -564px -365px;
+    width: 8px;
+    height: 5px;
+}
+
+.icon-arrow-down-blue {
+    background-position: -900px -365px;
+    width: 8px;
+    height: 5px;
+}
+
+.icon-chevron-down-small {
+    background-position: -467px -414px;
+    width: 10px;
+    height: 5px;
+}
+
+.icon-x {
+    background-position: -147px -147px;
+    width: 18px;
+    height: 18px;
+}
+
+.icon-question-mark {
+    background-position: -89px -145px;
+    width: 22px;
+    height: 22px;
+}
+
+.icon-pie-chart {
+    background-position: -30px -1628px;
+    width: 24px;
+    height: 24px;
+}
+
+.icon-money-bag {
+    background-position: -73px -1628px;
+    width: 24px;
+    height: 24px;
+}
+
+.icon-bank {
+    background-position: -117px -1628px;
+    width: 24px;
+    height: 24px;
+}
+
+.icon-bag {
+    background-position: -161px -1628px;
+    width: 24px;
+    height: 24px;
+}
+
+.icon-cart {
+    background-position: -204px -1628px;
+    width: 24px;
+    height: 24px;
+}
+
+.icon-document {
+    background-position: -249px -1628px;
+    width: 24px;
+    height: 24px;
+}
+
+.icon-warehouse {
+    background-position: -291px -1628px;
+    width: 24px;
+    height: 24px;
+}
+
+.icon-tools {
+    background-position: -336px -1628px;
+    width: 24px;
+    height: 24px;
+}
+
+.icon-assets {
+    background-position: -378px -1630px;
+    width: 24px;
+    height: 24px;
+}
+
+.icon-government {
+    background-position: -423px -1630px;
+    width: 24px;
+    height: 24px;
+}
+
+.icon-price-tag {
+    background-position: -467px -1628px;
+    width: 24px;
+    height: 24px;
+}
+
+.icon-notebook {
+    background-position: -510px -1628px;
+    width: 24px;
+    height: 24px;
+}
+
+.icon-dollar-coin {
+    background-position: -378px -1659px;
+    width: 24px;
+    height: 24px;
+}
+
+.icon-bar-chart {
+    background-position: -547px -1628px;
+    width: 24px;
+    height: 24px;
+}
+
+.icon-graph {
+    background-position: -204px -1664px;
+    width: 24px;
+    height: 24px;
+}
+
+/*icon hướng lên trên*/
+.icon-rotate-up {
+    transition: 0.7s;
+    -webkit-transition: 0.7s;
+    -moz-transition: 0.7s;
+    -o-transition: 0.7s;
+}
+
+/*icon hướng xuống dưới*/
+.icon-rotate-down {
+    transition: 0.7s;
+    -webkit-transition: 0.7s;
+    -moz-transition: 0.7s;
+    -o-transition: 0.7s;
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    transform: rotate(180deg);
+}

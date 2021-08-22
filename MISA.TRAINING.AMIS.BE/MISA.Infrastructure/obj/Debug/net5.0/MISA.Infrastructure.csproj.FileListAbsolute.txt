@@ -1,0 +1,15 @@
+C:\Users\mHoang\source\repos\MISA.CukCuk\MISA.Infrastructure\bin\Debug\net5.0\MISA.Infrastructure.deps.json
+C:\Users\mHoang\source\repos\MISA.CukCuk\MISA.Infrastructure\bin\Debug\net5.0\MISA.Infrastructure.dll
+C:\Users\mHoang\source\repos\MISA.CukCuk\MISA.Infrastructure\bin\Debug\net5.0\ref\MISA.Infrastructure.dll
+C:\Users\mHoang\source\repos\MISA.CukCuk\MISA.Infrastructure\bin\Debug\net5.0\MISA.Infrastructure.pdb
+C:\Users\mHoang\source\repos\MISA.CukCuk\MISA.Infrastructure\obj\Debug\net5.0\MISA.Infrastructure.csproj.AssemblyReference.cache
+C:\Users\mHoang\source\repos\MISA.CukCuk\MISA.Infrastructure\obj\Debug\net5.0\MISA.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\mHoang\source\repos\MISA.CukCuk\MISA.Infrastructure\obj\Debug\net5.0\MISA.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\mHoang\source\repos\MISA.CukCuk\MISA.Infrastructure\obj\Debug\net5.0\MISA.Infrastructure.AssemblyInfo.cs
+C:\Users\mHoang\source\repos\MISA.CukCuk\MISA.Infrastructure\obj\Debug\net5.0\MISA.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\mHoang\source\repos\MISA.CukCuk\MISA.Infrastructure\obj\Debug\net5.0\MISA.Infrastructure.dll
+C:\Users\mHoang\source\repos\MISA.CukCuk\MISA.Infrastructure\obj\Debug\net5.0\ref\MISA.Infrastructure.dll
+C:\Users\mHoang\source\repos\MISA.CukCuk\MISA.Infrastructure\obj\Debug\net5.0\MISA.Infrastructure.pdb
+C:\Users\mHoang\source\repos\MISA.CukCuk\MISA.Infrastructure\obj\Debug\net5.0\MISA.Infrastructure.csproj.CopyComplete
+C:\Users\mHoang\source\repos\MISA.CukCuk\MISA.Infrastructure\bin\Debug\net5.0\MISA.ApplicationCore.dll
+C:\Users\mHoang\source\repos\MISA.CukCuk\MISA.Infrastructure\bin\Debug\net5.0\MISA.ApplicationCore.pdb

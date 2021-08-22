@@ -1,0 +1,72 @@
+/*Container chứa items*/
+.dropdown-item-container {
+    z-index: 20;
+    position: absolute;
+    background-color: white;
+    border-radius: 2px;
+    max-height: calc(32px * 5 + 2);
+    overflow-y: auto;
+    top: 110%;
+    left: 1px;
+    right: 1px;
+    padding: 2px 0;
+    display: block;
+    border: 1px solid #babec5;
+}
+
+.dropdown-item-container.up {
+    top: unset;
+    bottom: 110%;
+}
+
+.dropdown-item-container::-webkit-scrollbar-track,
+.dropdown-item-container::-webkit-scrollbar-thumb
+{
+    border-radius: 0 2px 2px 0;
+}
+
+/*dropdown item*/
+.m-dropdown-item {
+    height: 32px;
+    padding: 0 10px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.m-dropdown-item:hover {
+    background-color: #e9ebee;
+}
+
+/*icon của dropdown item*/
+.m-dropdown-item .m-dropdown-item-icon {
+    margin-right: 10px;
+    height: 16px;
+    width: 16px;
+    color: transparent;
+}
+
+/*text của dropdown item*/
+.m-dropdown-item .m-dropdown-item-text {
+    margin-right: 10px;
+    user-select: none;
+}
+
+
+.m-dropdown-item.dropdown-item-selecting {
+    background-color: #e9ebee;
+}
+
+/*dropdown item được chọn*/
+.dropdown-item-picked,
+.dropdown-item-picked:hover {
+    background-color: #2ca01c !important;
+    color: white !important;
+}
+
+/*dropdown item được chọn*/
+.dropdown-item-picked .m-dropdown-item-icon,
+.dropdown-item-picked:hover .m-dropdown-item-icon {
+    color: white !important;
+}
+

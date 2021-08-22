@@ -1,0 +1,35 @@
+/*custom dropdown*/
+.m-dropdown {
+    /*padding: 0 16px;*/
+    /*display: flex;*/
+    border-radius: 2px;
+    outline: none;
+    /*border: 1px solid #bbbbbb;*/
+    height: 32px;
+    font-size: 13px;
+    color: #000000;
+    font-family: NotoSans;
+    position: relative;
+}
+
+/*dropdown có label*/
+.label-dropdown {
+    display: block;
+}
+/*label*/
+.label-dropdown > label {
+    flex-basis: 100%;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+/*Thêm dấu * nếu required*/
+.label-dropdown > .label-required:after {
+    content: " (*)";
+    color: red;
+}
+
+.label-dropdown .m-dropdown {
+    margin-top: 4px;
+    width: 100%;
+}

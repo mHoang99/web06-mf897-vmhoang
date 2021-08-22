@@ -1,0 +1,83 @@
+.paging-bar {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 46px;
+    position: sticky;
+    left: 0px;
+    bottom: 0;
+    background-color: white;
+    z-index: 5;
+    padding: 0 16px;
+}
+
+/*số record / tổng*/
+.paging-bar .total-record {
+    text-align: left;
+}
+
+.paging-bar > div:nth-child(2) {
+    display: flex;
+    gap: 16px;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+/*chuyển trang*/
+.paging-bar .paging-container {
+    display: flex;
+    gap: 8px;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.paging-bar .paging-container .paging-btn {
+    height: 24px;
+    border-radius: 2px;
+    border: none;
+    cursor: pointer;
+    background-color: transparent;
+}
+
+.paging-bar .paging-container .paging-btn:hover {
+    background-color: white;
+}
+
+.paging-bar .paging-container .paging-num {
+    height: 24px;
+    width: 24px;
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+    background-color: transparent;
+}
+
+.paging-bar .paging-container .paging-num:hover {
+    background-color: white;
+}
+
+.paging-bar .paging-container .paging-num:active {
+    background-color: #2ca01c;
+    color: white;
+}
+
+.paging-bar .paging-container .paging-num[disabled],
+.paging-bar .paging-container .paging-btn[disabled] {
+    cursor: default;
+}
+
+.paging-bar .paging-container .paging-btn[disabled]:hover {
+    background-color: transparent;
+}
+
+.paging-bar .paging-container .paging-num.active {
+    font-weight: 700;
+    border: 1px solid #bbbbbb;
+}
+
+/*Số record / trang*/
+.paging-bar .record-counting {
+    flex-basis: 20%;
+    text-align: right;
+}
