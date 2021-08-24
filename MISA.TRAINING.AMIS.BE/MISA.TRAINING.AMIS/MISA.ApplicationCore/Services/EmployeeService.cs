@@ -38,25 +38,26 @@ namespace MISA.ApplicationCore.Services
         {
             try
             {
-                var maxCode = (await _repository.GetMaxEntityCode()).ToString();
+                var maxCode = (await _repository.GetMaxEntityCode());
+                
+                //var prefix = "";
+                //var codeNumber = 0;
+                //var codeNumberLength = 0;
 
-                var prefix = "";
-                var codeNumber = 0;
-                var codeNumberLength = 0;
+                //var numArr = Regex.Split(maxCode, @"\D+");
 
-                var numArr = Regex.Split(maxCode, @"\D+");
+                //if (Char.IsDigit(maxCode[^1]))
+                //{
+                //    codeNumber = Int32.Parse(numArr[numArr.Length - 1]) + 1;
+                //    codeNumberLength = codeNumber.ToString().Length;
+                //}
 
-                if (Char.IsDigit(maxCode[^1]))
-                {
-                    codeNumber = Int32.Parse(numArr[numArr.Length - 1]) + 1;
-                    codeNumberLength = codeNumber.ToString().Length;
-                }
+                //prefix = maxCode.Substring(0, maxCode.Length - 1 - codeNumberLength);
 
-                prefix = maxCode.Substring(0, maxCode.Length - 1 - codeNumberLength);
+                //var newCode = prefix + codeNumber;
 
-                var newCode = prefix + codeNumber;
-
-                serviceResult.Data = newCode;
+                //serviceResult.Data = newCode;
+                serviceResult.Data = maxCode;
                 serviceResult.SuccessState = true;
                 return serviceResult;
             }
@@ -69,7 +70,7 @@ namespace MISA.ApplicationCore.Services
             }
         }
 
-        async public Task<ServiceResult> Filter(string employeeFilter, Guid? departmentId, Guid? positionId, int? pageNumber, int? pageSize)
+        async public Task<ServiceResult> Filter(string employeeFilter, int? pageNumber, int? pageSize)
         {
             try
             {
@@ -88,9 +89,7 @@ namespace MISA.ApplicationCore.Services
                 serviceResult.Data = await _repository.Filter(
                     iPageNumber,
                     iPageSize,
-                    employeeFilter,
-                    departmentId,
-                    positionId
+                    employeeFilter
                 );
 
                 serviceResult.SuccessState = true;

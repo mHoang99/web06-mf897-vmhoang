@@ -39,20 +39,16 @@ namespace MISA.AMIS.API.Apis
         /// <param name="pageNumber"></param>
         /// <param name="pageSize"></param>
         /// <param name="EmployeeFilter"></param>
-        /// <param name="PositionId"></param>
-        /// <param name="DepartmentId"></param>
         /// <returns></returns>
         [HttpGet("FilterPaging")]
         public async Task<IActionResult> FiterAsync(
                 [FromQuery] int? pageNumber,
                 [FromQuery] int? pageSize,
-                [FromQuery] string EmployeeFilter,
-                [FromQuery] Guid? PositionId,
-                [FromQuery] Guid? DepartmentId
+                [FromQuery] string EmployeeFilter
 
             )
         {
-            var result = await _service.Filter(EmployeeFilter, DepartmentId, PositionId, pageNumber, pageSize);
+            var result = await _service.Filter(EmployeeFilter, pageNumber, pageSize);
 
             if (result.SuccessState)
             {

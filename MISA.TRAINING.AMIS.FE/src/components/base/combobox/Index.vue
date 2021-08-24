@@ -75,6 +75,9 @@ export default {
     modelModifiers: {
       default: () => ({}),
     },
+    required: {
+      type: Boolean,
+    },
   },
 
   data() {
@@ -350,15 +353,24 @@ export default {
      */
     onInputBlur() {
       //item không hợp lệ
-      if (this.selectedItemIndex < 0) {
+      if (this.selectedItemIndex <= 0) {
         this.itemValid = false;
-
         //báo lỗi ra tooltip
         if (this.inputValue) {
           this.$refs.input.tooltip = INPUT_WARNING.INVALID_FIELD.format(
             this.displayName
           );
+          return;
         }
+      }
+
+      if (!this.outputValue && this.required) {
+        this.selfRequiredValid = false;
+        this.$refs.input.tooltip = INPUT_WARNING.CANT_BE_NULL.format(
+          this.displayName
+        );
+      } else {
+        this.selfRequiredValid = true;
       }
     },
 

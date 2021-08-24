@@ -75,7 +75,10 @@ export default {
         let res = await EmployeeService.deleteEmployee(this.status.selectedId);
         if (res?.status == 200 && parseInt(res?.data) > 0) {
           this.successToast(
-            TOAST_MESSAGE.DELETE_SUCCESS.format(this.status.selectedCode),
+            TOAST_MESSAGE.DELETE_SUCCESS.format(
+              EMPLOYEE_TEXT.DISPLAY_NAME,
+              this.status.selectedCode
+            ),
             TOAST_DURATION
           );
           this.$emit("success");

@@ -15,6 +15,10 @@
     width: 240px;
 }
 
+.filter-bar .field-input-container input::placeholder {
+    font-style: italic;
+}
+
 .filter-bar .btn-refresh {
     cursor: pointer;
 }

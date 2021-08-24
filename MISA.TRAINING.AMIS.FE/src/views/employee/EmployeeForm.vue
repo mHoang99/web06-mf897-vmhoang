@@ -295,7 +295,7 @@
     <the-popup
       v-if="invalidFieldPopupShow"
       btn1="Đóng"
-      @confirm="invalidFieldPopupShow = false"
+      @confirm="onInvalidFieldPopupConfirm"
       type="alert"
     >
       {{ invalidFieldPopupMessage }}
@@ -548,6 +548,12 @@ export default {
       this.invalidFieldPopupShow = true;
     },
 
+    onInvalidFieldPopupConfirm() {
+      this.invalidFieldPopupShow = false;
+      //foccus sai
+      this.invalidRef[0].$el.querySelector("input").focus();
+    },
+
     /**
      * Thông báo trường không hợp lệ
      * @param {String} message
@@ -643,15 +649,11 @@ export default {
           }
         }
       });
-
       if (this.invalidRef.length > 0) {
         let msg =
           this.invalidRef[0].tooltip ?? this.invalidRef[0].$refs.input.tooltip;
 
         this.popupInvalidFields(msg);
-
-        //foccus sai
-        this.invalidRef[0].$el.querySelector("input").focus();
         return false;
       } else {
         return this.sendDetails();

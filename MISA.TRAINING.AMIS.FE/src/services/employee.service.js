@@ -35,17 +35,13 @@ class EmployeeService {
      * @param {Number} pageSize kích thước trang
      * @param {Number} pageNumber số trang
      * @param {String} employeeFilter 
-     * @param {String} departmentId 
-     * @param {String} positionId 
      * @returns {Promise} res từ api
      * CREATED_BY: VMHOANG (15/07/2021)
      */
     async filter(
         pageSize = 10,
         pageNumber = 1,
-        employeeFilter = "nv",
-        departmentId = "",
-        positionId = ""
+        employeeFilter = "",
     ) {
         return axios
             .get(
@@ -55,8 +51,6 @@ class EmployeeService {
                         pageSize: pageSize,
                         pageNumber: pageNumber,
                         employeeFilter: employeeFilter,
-                        departmentId: departmentId,
-                        positionId: positionId
                     }
                 }
             )

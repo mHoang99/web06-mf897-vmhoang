@@ -26,3 +26,17 @@ D:\Projects\MISA\GD1\MISA.TRAINING.AMIS.BE\MISA.TRAINING.AMIS\MISA.ApplicationCo
 D:\Projects\MISA\GD1\MISA.TRAINING.AMIS.BE\MISA.TRAINING.AMIS\MISA.ApplicationCore\obj\Debug\net5.0\MISA.ApplicationCore.dll
 D:\Projects\MISA\GD1\MISA.TRAINING.AMIS.BE\MISA.TRAINING.AMIS\MISA.ApplicationCore\obj\Debug\net5.0\ref\MISA.ApplicationCore.dll
 D:\Projects\MISA\GD1\MISA.TRAINING.AMIS.BE\MISA.TRAINING.AMIS\MISA.ApplicationCore\obj\Debug\net5.0\MISA.ApplicationCore.pdb
+D:\Projects\MISA\GD1\web06-mf897-vmhoang\MISA.TRAINING.AMIS.BE\MISA.TRAINING.AMIS\MISA.ApplicationCore\obj\Debug\net5.0\MISA.ApplicationCore.csproj.AssemblyReference.cache
+D:\Projects\MISA\GD1\web06-mf897-vmhoang\MISA.TRAINING.AMIS.BE\MISA.TRAINING.AMIS\MISA.ApplicationCore\obj\Debug\net5.0\MISA.ApplicationCore.Properties.Resources.resources
+D:\Projects\MISA\GD1\web06-mf897-vmhoang\MISA.TRAINING.AMIS.BE\MISA.TRAINING.AMIS\MISA.ApplicationCore\obj\Debug\net5.0\MISA.ApplicationCore.csproj.GenerateResource.cache
+D:\Projects\MISA\GD1\web06-mf897-vmhoang\MISA.TRAINING.AMIS.BE\MISA.TRAINING.AMIS\MISA.ApplicationCore\obj\Debug\net5.0\MISA.ApplicationCore.GeneratedMSBuildEditorConfig.editorconfig
+D:\Projects\MISA\GD1\web06-mf897-vmhoang\MISA.TRAINING.AMIS.BE\MISA.TRAINING.AMIS\MISA.ApplicationCore\obj\Debug\net5.0\MISA.ApplicationCore.AssemblyInfoInputs.cache
+D:\Projects\MISA\GD1\web06-mf897-vmhoang\MISA.TRAINING.AMIS.BE\MISA.TRAINING.AMIS\MISA.ApplicationCore\obj\Debug\net5.0\MISA.ApplicationCore.AssemblyInfo.cs
+D:\Projects\MISA\GD1\web06-mf897-vmhoang\MISA.TRAINING.AMIS.BE\MISA.TRAINING.AMIS\MISA.ApplicationCore\obj\Debug\net5.0\MISA.ApplicationCore.csproj.CoreCompileInputs.cache
+D:\Projects\MISA\GD1\web06-mf897-vmhoang\MISA.TRAINING.AMIS.BE\MISA.TRAINING.AMIS\MISA.ApplicationCore\obj\Debug\net5.0\MISA.ApplicationCore.dll
+D:\Projects\MISA\GD1\web06-mf897-vmhoang\MISA.TRAINING.AMIS.BE\MISA.TRAINING.AMIS\MISA.ApplicationCore\obj\Debug\net5.0\ref\MISA.ApplicationCore.dll
+D:\Projects\MISA\GD1\web06-mf897-vmhoang\MISA.TRAINING.AMIS.BE\MISA.TRAINING.AMIS\MISA.ApplicationCore\obj\Debug\net5.0\MISA.ApplicationCore.pdb
+D:\Projects\MISA\GD1\web06-mf897-vmhoang\MISA.TRAINING.AMIS.BE\MISA.TRAINING.AMIS\MISA.ApplicationCore\bin\Debug\net5.0\MISA.ApplicationCore.deps.json
+D:\Projects\MISA\GD1\web06-mf897-vmhoang\MISA.TRAINING.AMIS.BE\MISA.TRAINING.AMIS\MISA.ApplicationCore\bin\Debug\net5.0\MISA.ApplicationCore.dll
+D:\Projects\MISA\GD1\web06-mf897-vmhoang\MISA.TRAINING.AMIS.BE\MISA.TRAINING.AMIS\MISA.ApplicationCore\bin\Debug\net5.0\ref\MISA.ApplicationCore.dll
+D:\Projects\MISA\GD1\web06-mf897-vmhoang\MISA.TRAINING.AMIS.BE\MISA.TRAINING.AMIS\MISA.ApplicationCore\bin\Debug\net5.0\MISA.ApplicationCore.pdb

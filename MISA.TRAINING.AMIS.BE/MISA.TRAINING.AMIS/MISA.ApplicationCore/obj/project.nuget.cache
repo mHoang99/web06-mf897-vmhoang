@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "3aRuCXVWlvpm2ZAnxFW6fw1mR4WXyotGeyCxg+O5TDylLcYCQFAZikGsCtyLH68JHeGRcOMhSZEUXHz5wmKFlg==",
+  "dgSpecHash": "UPanDEhzvAQlAhPKIa93YZ6khI378jDRFKsHcr0mS3B4HNJk+OJhd3dllffY67NLAkUMiBo8qOJJ9OF0gHTNtA==",
   "success": true,
-  "projectFilePath": "D:\\Projects\\MISA\\GD1\\MISA.TRAINING.AMIS.BE\\MISA.TRAINING.AMIS\\MISA.ApplicationCore\\MISA.ApplicationCore.csproj",
+  "projectFilePath": "D:\\Projects\\MISA\\GD1\\web06-mf897-vmhoang\\MISA.TRAINING.AMIS.BE\\MISA.TRAINING.AMIS\\MISA.ApplicationCore\\MISA.ApplicationCore.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\mHoang\\.nuget\\packages\\libphonenumber-csharp\\8.12.28\\libphonenumber-csharp.8.12.28.nupkg.sha512",
     "C:\\Users\\mHoang\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\5.0.0\\microsoft.extensions.configuration.abstractions.5.0.0.nupkg.sha512",

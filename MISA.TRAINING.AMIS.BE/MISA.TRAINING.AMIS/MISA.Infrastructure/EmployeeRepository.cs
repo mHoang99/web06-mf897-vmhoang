@@ -43,20 +43,18 @@ namespace MISA.Infrastructure
         async public Task<string> GetMaxEntityCode()
         {
             var newCode = await _dbConnection.QueryFirstOrDefaultAsync<string>(
-                "Proc_GetMaxEmployeeCode",
+                "Proc_GetNewEmployeeCode",
                 commandType: CommandType.StoredProcedure
                 );
             return newCode;
         }
 
-        async public Task<object> Filter(int pageNumber, int pageSize, string employeeFilter, Guid? departmentId, Guid? positionId)
+        async public Task<object> Filter(int pageNumber, int pageSize, string employeeFilter)
         {
             var parameters = new DynamicParameters();
             parameters.Add("@PageSize", pageSize);
             parameters.Add("@PageIndex", pageNumber);
             parameters.Add("@EmployeeFilter", employeeFilter);
-            parameters.Add("@PositionId", positionId);
-            parameters.Add("@DepartmentId", departmentId);
             parameters.Add("@TotalRecord", direction: ParameterDirection.Output);
             parameters.Add("@TotalPage", direction: ParameterDirection.Output);
 

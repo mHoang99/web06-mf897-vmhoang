@@ -508,11 +508,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Projects\\MISA\\GD1\\MISA.TRAINING.AMIS.BE\\MISA.TRAINING.AMIS\\MISA.TRAINING.AMIS\\MISA.AMIS.API.csproj",
+      "projectUniqueName": "D:\\Projects\\MISA\\GD1\\web06-mf897-vmhoang\\MISA.TRAINING.AMIS.BE\\MISA.TRAINING.AMIS\\MISA.TRAINING.AMIS\\MISA.AMIS.API.csproj",
       "projectName": "MISA.AMIS.API",
-      "projectPath": "D:\\Projects\\MISA\\GD1\\MISA.TRAINING.AMIS.BE\\MISA.TRAINING.AMIS\\MISA.TRAINING.AMIS\\MISA.AMIS.API.csproj",
+      "projectPath": "D:\\Projects\\MISA\\GD1\\web06-mf897-vmhoang\\MISA.TRAINING.AMIS.BE\\MISA.TRAINING.AMIS\\MISA.TRAINING.AMIS\\MISA.AMIS.API.csproj",
       "packagesPath": "C:\\Users\\mHoang\\.nuget\\packages\\",
-      "outputPath": "D:\\Projects\\MISA\\GD1\\MISA.TRAINING.AMIS.BE\\MISA.TRAINING.AMIS\\MISA.TRAINING.AMIS\\obj\\",
+      "outputPath": "D:\\Projects\\MISA\\GD1\\web06-mf897-vmhoang\\MISA.TRAINING.AMIS.BE\\MISA.TRAINING.AMIS\\MISA.TRAINING.AMIS\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\mHoang\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -529,11 +529,11 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "D:\\Projects\\MISA\\GD1\\MISA.TRAINING.AMIS.BE\\MISA.TRAINING.AMIS\\MISA.ApplicationCore\\MISA.ApplicationCore.csproj": {
-              "projectPath": "D:\\Projects\\MISA\\GD1\\MISA.TRAINING.AMIS.BE\\MISA.TRAINING.AMIS\\MISA.ApplicationCore\\MISA.ApplicationCore.csproj"
+            "D:\\Projects\\MISA\\GD1\\web06-mf897-vmhoang\\MISA.TRAINING.AMIS.BE\\MISA.TRAINING.AMIS\\MISA.ApplicationCore\\MISA.ApplicationCore.csproj": {
+              "projectPath": "D:\\Projects\\MISA\\GD1\\web06-mf897-vmhoang\\MISA.TRAINING.AMIS.BE\\MISA.TRAINING.AMIS\\MISA.ApplicationCore\\MISA.ApplicationCore.csproj"
             },
-            "D:\\Projects\\MISA\\GD1\\MISA.TRAINING.AMIS.BE\\MISA.TRAINING.AMIS\\MISA.Infrastructure\\MISA.Infrastructure.csproj": {
-              "projectPath": "D:\\Projects\\MISA\\GD1\\MISA.TRAINING.AMIS.BE\\MISA.TRAINING.AMIS\\MISA.Infrastructure\\MISA.Infrastructure.csproj"
+            "D:\\Projects\\MISA\\GD1\\web06-mf897-vmhoang\\MISA.TRAINING.AMIS.BE\\MISA.TRAINING.AMIS\\MISA.Infrastructure\\MISA.Infrastructure.csproj": {
+              "projectPath": "D:\\Projects\\MISA\\GD1\\web06-mf897-vmhoang\\MISA.TRAINING.AMIS.BE\\MISA.TRAINING.AMIS\\MISA.Infrastructure\\MISA.Infrastructure.csproj"
             }
           }
         }

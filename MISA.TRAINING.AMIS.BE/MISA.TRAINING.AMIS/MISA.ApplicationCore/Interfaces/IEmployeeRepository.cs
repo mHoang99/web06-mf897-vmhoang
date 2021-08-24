@@ -31,10 +31,9 @@ namespace MISA.ApplicationCore.Interfaces
         /// <param name="pageNumber">Số trang</param>
         /// <param name="pageSize">Kích thước trang</param>
         /// <param name="employeeFilter">Từ khóa</param>
-        /// <param name="departmentId">Id phòng ban</param>
-        /// <param name="positionId">Id vị trí</param>
+
         /// <returns>Nhân viên tìm được, tổng số bản ghi, tổng số trang</returns>
-        Task<object> Filter(int pageNumber, int pageSize, string employeeFilter, Guid? departmentId, Guid? positionId);
+        Task<object> Filter(int pageNumber, int pageSize, string employeeFilter);
         #endregion
     }
 }
