@@ -13,7 +13,6 @@
       ref="input"
       type="text"
       :id="id"
-      placeholder="Chọn/Nhập thông tin"
       :value="inputValue"
       v-bind="$attrs"
       @input="onInput"

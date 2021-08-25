@@ -72,7 +72,7 @@ export default {
     async confirmDelete() {
       //Gọi service xóa
       try {
-        let res = await EmployeeService.deleteEmployee(this.status.selectedId);
+        let res = await EmployeeService.delete(this.status.selectedId);
         if (res?.status == 200 && parseInt(res?.data) > 0) {
           this.successToast(
             TOAST_MESSAGE.DELETE_SUCCESS.format(

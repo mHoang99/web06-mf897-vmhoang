@@ -99,21 +99,31 @@ table .row-option > div {
     padding: 5px 10px;
     display: flex;
     justify-content: flex-end;
+    gap: 6px;
+    box-sizing: border-box;
 }
 
 table .row-option > div > div:nth-child(1) {
-    padding: 6px 0 6px 16px;
     color: #0075c0;
     font-weight: 700;
     cursor: pointer;
 }
 
-table .row-option > div > div:nth-child(2) {
-    padding: 8px 14px;
+table .row-option > div > button {
+    padding: 6px 8px;
     display: flex !important;
     align-items: center;
     justify-content: center;
     cursor: pointer;
+    background-color: transparent;
+    border-radius: 0%;
+    border: 1px solid transparent;
+    box-sizing: border-box;
+}
+
+table .row-option > div > button[active=true] {
+    border: 1px solid #0075c0;
+    border-radius: 2px;
 }
 
 .no-data {

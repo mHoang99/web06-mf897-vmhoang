@@ -322,13 +322,29 @@ namespace MISA.ApplicationCore
                 }
             }
 
-            return isValid;
+            return isValid && await CustomValidate(entity);
         }
 
-        private bool CheckGuid(string fieldName, string toCheck)
+        /// <summary>
+        /// Hàm validate tùy chọn
+        /// </summary>
+        /// <returns>true | false</returns>
+        protected async virtual Task<Boolean> CustomValidate(T entity)
+        {
+            return true;
+        }
+
+        /// <summary>
+        /// Kiểm tra string là guid
+        /// </summary>
+        /// <param name="fieldName">tên trường</param>
+        /// <param name="toCheck">string cần kiểm tra</param>
+        /// <returns>true | false</returns>
+        protected bool CheckGuid(string fieldName, string toCheck)
         {
             var check = Guid.TryParse(toCheck, out _);
 
+            if (!check)
             if (!check)
             {
                 serviceResult.SuccessState = false;

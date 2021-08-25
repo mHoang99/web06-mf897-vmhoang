@@ -25,7 +25,7 @@ class DropdownService {
      */
     async getByFieldName(fieldName) {
         return axios
-            .get(axios.defaults.baseURL + "/v1/" + Utils.pascalize(pluralize(fieldName)))
+            .get("/v1/" + Utils.pascalize(pluralize(fieldName)))
             .then(response => {
                 return response;
             })

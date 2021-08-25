@@ -1,5 +1,5 @@
 <template>
-  <the-modal :open="true" class="m-popup" @modal-close="closePopup">
+  <the-modal :open="true" class="m-popup" @modal-close="closePopup" ref="modal">
     <template #content>
       <div class="m-modal-icon-container">
         <div class="m-modal-icon sprite"></div>
@@ -11,12 +11,22 @@
       </div>
     </template>
     <template #footer>
-      <base-button type="secondary" @click="closePopup" id="popup-btn-2">
+      <base-button
+        type="secondary"
+        @click="closePopup"
+        id="popup-btn-2"
+        :tabindex="1"
+      >
         {{ $attrs.btn2 }}
       </base-button>
 
       <div>
-        <base-button type="secondary" @click="cancelPopup" id="popup-btn-3">
+        <base-button
+          type="secondary"
+          @click="cancelPopup"
+          id="popup-btn-3"
+          :tabindex="2"
+        >
           {{ $attrs.btn3 }}
         </base-button>
 
@@ -25,6 +35,7 @@
           @click="confirmPopup"
           v-if="$attrs.type !== 'info'"
           id="popup-btn-1"
+          :tabindex="3"
         >
           {{ $attrs.btn1 }}
         </base-button>
@@ -32,6 +43,7 @@
     </template>
   </the-modal>
 </template>
+
 
 <script>
 /*
@@ -42,6 +54,10 @@ export default {
   name: "ThePopup",
 
   emits: ["close", "cancel", "confirm"],
+
+  mounted() {
+     this.$refs.modal.$refs.card.focus()
+  },
 
   methods: {
     /**

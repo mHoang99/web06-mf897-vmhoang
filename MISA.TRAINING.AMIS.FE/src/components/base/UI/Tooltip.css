@@ -10,3 +10,8 @@
 .v-popper--theme-alert-tooltip .v-popper__arrow {
     border-color: rgba(238, 39, 39, 0.9) !important;
 }
+
+
+.v-popper--theme-info-na-tooltip .v-popper__arrow {
+    border: none;
+}

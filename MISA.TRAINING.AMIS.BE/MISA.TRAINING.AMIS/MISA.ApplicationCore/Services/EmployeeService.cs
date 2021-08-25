@@ -38,26 +38,32 @@ namespace MISA.ApplicationCore.Services
         {
             try
             {
-                var maxCode = (await _repository.GetMaxEntityCode());
-                
-                //var prefix = "";
-                //var codeNumber = 0;
-                //var codeNumberLength = 0;
+                var maxCode = await _repository.GetMaxEntityCode();
+                var prefix = "";
+                var codeNumber = 0;
+                var codeNumberLength = 0;
+                var newCode = "";
 
-                //var numArr = Regex.Split(maxCode, @"\D+");
+                if (maxCode == null || maxCode == "")
+                {
+                    newCode = "1";
+                }
+                else
+                {
+                    var numArr = Regex.Split(maxCode, @"\D+");
 
-                //if (Char.IsDigit(maxCode[^1]))
-                //{
-                //    codeNumber = Int32.Parse(numArr[numArr.Length - 1]) + 1;
-                //    codeNumberLength = codeNumber.ToString().Length;
-                //}
+                    if (Char.IsDigit(maxCode[^1]))
+                    {
+                        codeNumber = Int32.Parse(numArr[numArr.Length - 1]) + 1;
+                        codeNumberLength = codeNumber.ToString().Length;
+                    }
 
-                //prefix = maxCode.Substring(0, maxCode.Length - 1 - codeNumberLength);
+                    prefix = maxCode.Substring(0, maxCode.Length - codeNumberLength);
 
-                //var newCode = prefix + codeNumber;
+                    newCode = prefix + codeNumber;
+                }
 
-                //serviceResult.Data = newCode;
-                serviceResult.Data = maxCode;
+                serviceResult.Data = newCode;
                 serviceResult.SuccessState = true;
                 return serviceResult;
             }

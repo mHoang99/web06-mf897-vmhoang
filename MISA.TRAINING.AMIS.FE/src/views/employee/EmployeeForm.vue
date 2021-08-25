@@ -260,17 +260,37 @@
     </template>
     <!-- ------------------------------FOOTER------------------------------ -->
     <template #footer>
-      <base-button type="secondary" id="btnDialogCancel" @click="closeForm">
+      <base-button
+        type="secondary"
+        id="btnDialogCancel"
+        @click="closeForm"
+        v-tooltip.top="{
+          content: 'Hủy',
+          theme: 'info-na-tooltip',
+        }"
+      >
         Hủy
       </base-button>
       <div>
-        <base-button type="secondary" id="btnDialogSave" @click="saveForm">
+        <base-button
+          type="secondary"
+          id="btnDialogSave"
+          @click="saveForm"
+          v-tooltip.top="{
+            content: 'Cất',
+            theme: 'info-na-tooltip',
+          }"
+        >
           Cất
         </base-button>
         <base-button
           type="primary"
           id="btnDialogSaveAndCreate"
           @click="saveFormAndCreate"
+          v-tooltip.top="{
+            content: 'Cất và thêm',
+            theme: 'info-na-tooltip',
+          }"
         >
           Cất và thêm
         </base-button>
@@ -440,12 +460,13 @@ export default {
     async addForm() {
       this.isLoading = true;
       try {
+        //Gọi API lấy code mới
         let resNewCode = await EmployeeService.getNewEmployeeCode();
         this.employeeDetails.EmployeeCode = resNewCode?.data;
+        this.$refs.inputEmployeeCode.$refs.input.focus();
       } catch (e) {
         console.log(e);
       }
-      this.$refs.inputEmployeeName.$refs.input.focus();
       this.isLoading = false;
     },
 
@@ -455,17 +476,18 @@ export default {
      */
     async editForm() {
       this.isLoading = true;
-      if (this.status.selectedId) {
-        try {
-          let resDetails = await EmployeeService.getEmployeeById(
+      try {
+        //Gọi API lấy thông tin nhân viên hiện tại
+        if (this.status.selectedId) {
+          let resDetails = await EmployeeService.getById(
             this.status.selectedId
           );
           this.bindDetails(resDetails?.data);
-        } catch (e) {
-          console.log(e);
         }
+        this.$refs.inputEmployeeCode.$refs.input.focus();
+      } catch (e) {
+        console.log(e);
       }
-      this.$refs.inputEmployeeCode.$refs.input.focus();
       this.isLoading = false;
     },
 
@@ -475,20 +497,23 @@ export default {
      */
     async cloneForm() {
       this.isLoading = true;
-      if (this.status.selectedId) {
-        try {
-          let resDetails = await EmployeeService.getEmployeeById(
+      try {
+        if (this.status.selectedId) {
+          //goị API lấy dữ liệu bản ghi được chọn
+          let resDetails = await EmployeeService.getById(
             this.status.selectedId
           );
+
+          //gọi API lấy dữ liệu bản ghi mới
           let resNewCode = await EmployeeService.getNewEmployeeCode();
 
           resDetails.data.EmployeeCode = resNewCode.data;
           this.bindDetails(resDetails.data);
-        } catch (e) {
-          console.log(e);
         }
+        this.$refs.inputEmployeeCode.$refs.input.focus();
+      } catch (e) {
+        console.log(e);
       }
-      this.$refs.inputEmployeeCode.$refs.input.focus();
       this.isLoading = false;
     },
 
@@ -503,6 +528,7 @@ export default {
     closeFormWithCheck() {
       let showPopup = false;
 
+      //Kiểm tra form bị thay đổi
       Object.entries(this.originalEmployeeDetails).forEach(([key]) => {
         if (this.originalEmployeeDetails[key] !== this.employeeDetails[key]) {
           showPopup = true;
@@ -570,12 +596,16 @@ export default {
      */
     notiChangeSucceed() {
       let msg = "";
-      if (this.status.formType == "add") {
-        msg = "Thêm bản ghi mới thành công";
-      }
-
-      if (this.status.formType == "edit") {
-        msg = "Thay đổi bản ghi thành công";
+      switch (this.status.formType) {
+        case "add":
+        case "clone":
+          msg = "Thêm bản ghi mới thành công";
+          break;
+        case "edit":
+          msg = "Thay đổi bản ghi thành công";
+          break;
+        default:
+          break;
       }
 
       this.successToast(msg, TOAST_DURATION);
@@ -606,6 +636,7 @@ export default {
      * CREATED_BY: VMHOANG (18/07/2021)
      */
     bindDetails(data) {
+      //Loop qua thông tin nhân viên
       Object.entries(this.employeeDetails ?? {}).forEach(([key]) => {
         switch (key) {
           case "DateOfBirth":
@@ -635,6 +666,7 @@ export default {
     async saveForm() {
       this.invalidRef = [];
 
+      //Loop qua thông tin nhân viên
       Object.entries(this.$refs).forEach(([key, el]) => {
         if (key.startsWith("input") || key.startsWith("cbx")) {
           let value = el.$data.outputValue;
@@ -682,11 +714,11 @@ export default {
         switch (this.status.formType) {
           case "add":
           case "clone":
-            res = await EmployeeService.createEmployee(this.employeeDetails);
+            res = await EmployeeService.create(this.employeeDetails);
             break;
 
           case "edit":
-            res = await EmployeeService.editEmployee(
+            res = await EmployeeService.edit(
               this.status.selectedId,
               this.employeeDetails
             );

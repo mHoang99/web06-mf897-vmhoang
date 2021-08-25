@@ -24,7 +24,8 @@
     width: 800px;
     /*height: 90%;*/
     background-color: white;
-    animation: fadeInOpacity 0.2s ease-in
+    animation: fadeInOpacity 0.2s ease-in;
+    outline: none;
 }
 /*header*/
 .m-modal .m-modal-card .m-modal-header {

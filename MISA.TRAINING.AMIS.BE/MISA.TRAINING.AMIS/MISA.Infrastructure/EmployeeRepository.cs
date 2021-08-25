@@ -43,7 +43,7 @@ namespace MISA.Infrastructure
         async public Task<string> GetMaxEntityCode()
         {
             var newCode = await _dbConnection.QueryFirstOrDefaultAsync<string>(
-                "Proc_GetNewEmployeeCode",
+                "Proc_GetMaxEmployeeCode",
                 commandType: CommandType.StoredProcedure
                 );
             return newCode;

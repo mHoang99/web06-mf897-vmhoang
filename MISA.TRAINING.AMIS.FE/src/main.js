@@ -54,6 +54,9 @@ app.use(VTooltip, {
         'alert-tooltip': {
             $extend: 'tooltip',
         },
+        'info-na-tooltip': {
+            $extend: 'tooltip',
+        }
     }
 });
 

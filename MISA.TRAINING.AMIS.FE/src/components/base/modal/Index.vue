@@ -1,7 +1,7 @@
 <template lang="">
     <div v-if="open" class="m-modal">
     <div class="m-modal-backdrop">
-      <div class="m-modal-card">
+      <div class="m-modal-card" ref="card">
         <div class="loader-container">
           <div class="loader"></div>
         </div>

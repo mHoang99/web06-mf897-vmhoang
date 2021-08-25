@@ -93,12 +93,12 @@
         >
           <div>
             <div @click="editClickHandler(index)">Sửa</div>
-            <div>
-              <div
-                class="sprite icon-arrow-down-blue"
-                @click.prevent.stop="openContextMenu($event, index)"
-              ></div>
-            </div>
+            <button
+              @click.stop="openContextMenu($event, index)"
+              :active="index == selectedRow"
+            >
+              <div class="sprite icon-arrow-down-blue" />
+            </button>
           </div>
         </td>
         <td
@@ -134,7 +134,7 @@ import Formater from "../../../common/format";
 import notificationMixin from "../../../mixins/notification.mixin";
 
 /*
- * Component bảng tái sử dụng 
+ * Component bảng tái sử dụng
  * Created_by: VMHOANG
  */
 export default {
@@ -272,11 +272,11 @@ export default {
      * CREATED_BY: VMHOANG (15/07/2021)
      */
     openContextMenu(event, index) {
-      //   console.log(event.target.getBoundingClientRect());
+      let target = event.currentTarget.parentNode.querySelector("button");
       this.contextMenu = {
         isShow: true,
-        positionX: event.target.getBoundingClientRect().x + "px",
-        positionY: event.target.getBoundingClientRect().y + "px",
+        positionX: target.getBoundingClientRect().x + 5 + "px",
+        positionY: target.getBoundingClientRect().y + 5 + "px",
       };
       this.selectedRow = index;
       event.target.closest("tr").classList.add("active");
@@ -289,6 +289,7 @@ export default {
     documentClick(e) {
       let els = this.$refs.tableBody.children;
       let target = e.target;
+      this.selectedRow = -1;
       els.forEach((el) => {
         if (el !== target && !el.contains(target)) {
           el.classList.remove("active");

@@ -80,6 +80,4 @@ namespace MISA.AMIS.API.Apis
         }
         #endregion
     }
-
-
 }
