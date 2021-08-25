@@ -38,7 +38,7 @@ import ComboBoxInput from "./ComboBoxInput.vue";
 import ComboBoxItemContainer from "./ComboBoxItemContainer.vue";
 import Mixins from "../../../common/utils";
 import { mapActions, mapGetters } from "vuex";
-import { INPUT_WARNING } from "../../../const";
+import { INPUT_WARNING } from "../../../resources/const";
 
 /**
  * Combobox component
@@ -355,6 +355,7 @@ export default {
       //item không hợp lệ
       if (this.selectedItemIndex <= 0) {
         this.itemValid = false;
+        this.selfValid = false;
         //báo lỗi ra tooltip
         if (this.inputValue) {
           this.$refs.input.tooltip = INPUT_WARNING.INVALID_FIELD.format(
@@ -362,9 +363,11 @@ export default {
           );
           return;
         }
+      } else{ 
+          this.selfValid = true;
       }
 
-      if (!this.outputValue && this.required) {
+      if (!this.inputValue && this.required) {
         this.selfRequiredValid = false;
         this.$refs.input.tooltip = INPUT_WARNING.CANT_BE_NULL.format(
           this.displayName

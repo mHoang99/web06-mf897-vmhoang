@@ -2,7 +2,7 @@ import axios from "axios";
 import Utils from "../common/utils";
 import pluralize from "pluralize";
 import store from "../store";
-import { TOAST_DURATION } from "../const";
+import { TOAST_DURATION } from "../resources/const";
 
 /**
  * Service lấy các giá trị của dropdown và combobox

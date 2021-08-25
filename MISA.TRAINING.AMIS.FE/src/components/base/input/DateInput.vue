@@ -37,7 +37,7 @@ import { DatePicker as VDatePicker } from "v-calendar";
 import Formatter from "../../../common/format";
 import ValidatorMixin from "../../../common/validate";
 import BaseInput from "./Index.vue";
-import { INPUT_WARNING } from "../../../const";
+import { INPUT_WARNING } from "../../../resources/const";
 
 /**
  * Component Input ngày tháng năm

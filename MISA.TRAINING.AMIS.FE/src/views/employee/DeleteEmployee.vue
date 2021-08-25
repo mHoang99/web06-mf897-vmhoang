@@ -19,7 +19,7 @@ import {
   POPUP_MESSAGE,
   TOAST_DURATION,
   TOAST_MESSAGE,
-} from "../../const";
+} from "../../resources/const";
 
 /*
  * Component xóa nhân viên

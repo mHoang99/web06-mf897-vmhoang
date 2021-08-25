@@ -1,5 +1,5 @@
-import { GENDER_NAME } from "../const";
-import GENDER from "../enums/gender";
+import { GENDER_NAME } from "../resources/const";
+import GENDER from "../resources/enums/gender";
 
 /**
  * Class chứa các hàm format

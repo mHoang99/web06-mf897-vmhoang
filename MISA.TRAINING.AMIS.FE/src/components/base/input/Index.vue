@@ -26,7 +26,7 @@
 <script>
 import mixins from "../../../common/utils";
 import ValidatorMixin from "../../../common/validate";
-import { INPUT_WARNING } from "../../../const";
+import { INPUT_WARNING } from "../../../resources/const";
 
 /**
  * Base Input component

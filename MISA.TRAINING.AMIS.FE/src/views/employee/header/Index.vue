@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import { EMPLOYEE_TEXT } from "../../../const";
+import { EMPLOYEE_TEXT } from "../../../resources/const";
 /*
  * Component header của trang nhân viên
  * Created_by: VMHOANG

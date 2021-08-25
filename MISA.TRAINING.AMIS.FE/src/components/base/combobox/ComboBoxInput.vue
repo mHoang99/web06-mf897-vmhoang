@@ -31,7 +31,7 @@
 </template>
 
 <script>
-import { INPUT_WARNING } from '../../../const';
+import { INPUT_WARNING } from '../../../resources/const';
 import BaseInput from "../input/Index.vue";
 
 /**

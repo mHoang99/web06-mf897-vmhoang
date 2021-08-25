@@ -337,7 +337,7 @@ import EmployeeService from "../../services/employee.service";
 import DepartmentComboBox from "../../components/base/combobox/department/Index.vue";
 import Formater from "../../common/format";
 import notificationMixin from "../../mixins/notification.mixin";
-import { EMPLOYEE_TEXT, POPUP_MESSAGE, TOAST_DURATION } from "../../const";
+import { EMPLOYEE_TEXT, POPUP_MESSAGE, TOAST_DURATION } from "../../resources/const";
 
 /*
  * Component form nhân viên

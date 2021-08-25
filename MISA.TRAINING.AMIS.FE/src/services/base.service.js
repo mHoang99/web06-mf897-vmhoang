@@ -1,5 +1,5 @@
 import axios from "axios";
-import { TOAST_DURATION } from "../const";
+import { TOAST_DURATION } from "../resources/const";
 
 import store from "../store";
 

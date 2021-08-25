@@ -1,5 +1,5 @@
 import { mapActions } from "vuex";
-import { TOAST_DURATION, TOAST_MESSAGE } from "../const";
+import { TOAST_DURATION, TOAST_MESSAGE } from "../resources/const";
 
 /**
  * Mixin hiện thông báo
