@@ -130,6 +130,7 @@ namespace MISA.ApplicationCore.Models
         /// <summary>
         /// Email
         /// </summary>
+        [MaxLength(50)]
         [DisplayName("Email")]
         public string Email { get; set; }
 

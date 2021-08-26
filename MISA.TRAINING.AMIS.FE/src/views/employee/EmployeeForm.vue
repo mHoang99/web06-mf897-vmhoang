@@ -50,6 +50,7 @@
             value=""
             placeholder=""
             :required="true"
+            maxlength="20;"
             v-model.output="employeeDetails.EmployeeCode"
           />
         </the-label>
@@ -62,6 +63,7 @@
             displayName="Tên"
             fieldType="name"
             value=""
+            maxlength="100"
             placeholder=""
             :required="true"
             v-model.output="employeeDetails.EmployeeName"
@@ -87,6 +89,7 @@
             displayName="Chức danh"
             value=""
             placeholder=""
+            maxlength="255"
             v-model.output="employeeDetails.EmployeePosition"
           />
         </the-label>
@@ -141,6 +144,7 @@
             value=""
             displayName="Số CMND"
             placeholder=""
+            maxlength="20"
             v-model.output="employeeDetails.IdentityNumber"
           />
         </the-label>
@@ -164,6 +168,7 @@
             type="text"
             value=""
             placeholder=""
+            maxlength="255"
             v-model.output="employeeDetails.IdentityPlace"
           />
         </the-label>
@@ -177,6 +182,7 @@
             type="text"
             value=""
             placeholder=""
+            maxlength="255"
             v-model.output="employeeDetails.Address"
           />
         </the-label>
@@ -188,6 +194,7 @@
             type="text"
             displayName="ĐT di động"
             value=""
+            maxlength="20"
             placeholder=""
             v-model.output="employeeDetails.PhoneNumber"
           />
@@ -200,6 +207,7 @@
             displayName="ĐT cố định"
             type="text"
             value=""
+            maxlength="20"
             placeholder=""
             v-model.output="employeeDetails.TelephoneNumber"
           />
@@ -211,7 +219,7 @@
             id="txtEmail"
             type="text"
             displayName="Email"
-            fieldType="email"   
+            fieldType="email"
             value=""
             placeholder=""
             v-model.output="employeeDetails.Email"
@@ -227,6 +235,7 @@
             fieldType="number"
             value=""
             placeholder=""
+            maxlength="255"
             v-model.output="employeeDetails.BankAccountNumber"
           />
         </the-label>
@@ -239,6 +248,7 @@
             type="text"
             value=""
             placeholder=""
+            maxlength="255"
             v-model.output="employeeDetails.BankName"
           />
         </the-label>
@@ -251,6 +261,7 @@
             type="text"
             value=""
             placeholder=""
+            maxlength="255"
             v-model.output="employeeDetails.BankBranchName"
           />
         </the-label>
