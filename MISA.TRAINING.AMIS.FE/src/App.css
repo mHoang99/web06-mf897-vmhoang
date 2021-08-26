@@ -49,8 +49,8 @@ body {
     font-style: italic;
 }
 
-@import "./components/base/UI/Common.css";
-@import "./components/base/UI/Input.css";
-@import "./components/base/UI/Icon.css";
-@import "./components/base/UI/ScrollBar.css";
-@import "./components/base/UI/Tooltip.css";
+@import "./components/base/ui/Common.css";
+@import "./components/base/ui/Input.css";
+@import "./components/base/ui/Icon.css";
+@import "./components/base/ui/ScrollBar.css";
+@import "./components/base/ui/Tooltip.css";

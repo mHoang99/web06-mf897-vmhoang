@@ -14,7 +14,8 @@ import DateInput from './components/base/input/DateInput.vue'
 import TheLabel from './components/base/label/Index.vue'
 import TheModal from './components/base/modal/Index.vue'
 import ThePopup from './components/base/popup/Index.vue'
-import TheLoading from './components/base/UI/TheLoading.vue'
+import TheLoading from './components/base/ui/TheLoading.vue'
+
 require("./common/prototype");
 
 //config axios

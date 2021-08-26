@@ -1,5 +1,5 @@
 <template>
-  <table class="base-table" border="0">
+  <table class="base-table" border="0" v-show="!isLoading">
     <caption></caption>
     <!-- --------------------------------------HEADER-------------------------------------- -->
     <thead>
@@ -113,9 +113,14 @@
   </table>
 
   <!-- Không có dữ liệu -->
-  <div class="no-data" v-if="tableData.data.length <= 0">
+  <div class="no-data" v-if="tableData.data.length <= 0 && !isLoading">
     <div class="no-data-img"></div>
     <div class="no-data-text">Không có dữ liệu</div>
+  </div>
+
+  <!-- Loading dữ liệu -->
+  <div class="table-loading" v-show="isLoading">
+    <the-loading :show="true"></the-loading>
   </div>
 
   <!-- context menu -->
@@ -129,7 +134,7 @@
 </template>
 
 <script>
-import ContextMenu from "../ContextMenu.vue";
+import ContextMenu from "./ContextMenu.vue";
 import Formater from "../../../common/format";
 import notificationMixin from "../../../mixins/notification.mixin";
 
@@ -161,6 +166,10 @@ export default {
 
     paddingRight: {
       type: String,
+    },
+
+    isLoading: {
+      type: Boolean,
     },
   },
 

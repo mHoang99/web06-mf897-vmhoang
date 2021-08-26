@@ -11,7 +11,14 @@
             @blur="onInputConfirm"
             ref="inputSearchBox"
         />
-        <div class="icon-refresh sprite btn-refresh" @click="$emit('reload-btn-click')"/>
+        <div 
+        class="icon-refresh sprite btn-refresh" 
+        @click="$emit('reload-btn-click')"
+        v-tooltip.top="{
+          content: 'Tải lại',
+          theme: 'info-na-tooltip',
+        }"
+        />
     </div>
 </template>
 <script>
@@ -25,14 +32,6 @@ export default {
   props: {
     recordFilter: {
       searchVal: {
-        type: String,
-        default: "",
-      },
-      departmentId: {
-        type: String,
-        default: "",
-      },
-      positionId: {
         type: String,
         default: "",
       },

@@ -1,5 +1,5 @@
 import axios from "axios";
-import { TOAST_DURATION } from "../resources/const";
+import { MESSAGE, TOAST_DURATION } from "../resources/const";
 
 import store from "../store";
 
@@ -21,7 +21,8 @@ class BaseService {
      */
     async getAll() {
         try {
-            return axios.get(this.BASE_ROUTE);
+            let res = await axios.get(this.BASE_ROUTE);
+            return res;
         }
         catch (error) {
             this.catchError(error);
@@ -36,10 +37,11 @@ class BaseService {
      */
     async getById(id) {
         try {
-            return axios
+            let res = await axios
                 .get(
                     this.BASE_ROUTE + '/' + id,
                 )
+            return res;
         }
         catch (error) {
             this.catchError(error);
@@ -55,11 +57,12 @@ class BaseService {
      */
     async create(data) {
         try {
-            return axios
+            let res = await axios
                 .post(
                     this.BASE_ROUTE,
                     data
                 )
+            return res;
         }
         catch (error) {
             this.catchError(error);
@@ -75,10 +78,11 @@ class BaseService {
      */
     async delete(id) {
         try {
-            return axios
+            let res = await axios
                 .delete(
                     this.BASE_ROUTE + '/' + id,
                 )
+            return res;
         }
         catch (error) {
             this.catchError(error);
@@ -95,11 +99,12 @@ class BaseService {
      */
     async edit(id, data) {
         try {
-            return axios
+            let res = await axios
                 .put(
                     axios.defaults.baseURL + this.BASE_ROUTE + '/' + id,
                     data,
                 )
+            return res;
         }
         catch (error) {
             this.catchError(error);
@@ -111,16 +116,12 @@ class BaseService {
      * @param {*} error 
      */
     catchError(error) {
-        // console.log(error.response)
-        if (error.response) {
-            store.dispatch("addNoti", {
-                type: "alert",
-                msg: error.response.data.UserMsg,
-                duration: TOAST_DURATION
-            })
-        }
+        store.dispatch("addNoti", {
+            type: "alert",
+            msg: error.response?.data?.UserMsg ?? MESSAGE.EXCEPTION,
+            duration: TOAST_DURATION
+        })
     }
-
 }
 
 export default BaseService;

@@ -29,7 +29,6 @@ namespace MISA.ApplicationCore.Services
         {
             _repository = repository;
         }
-
         #endregion
 
         #region Methods
@@ -44,22 +43,28 @@ namespace MISA.ApplicationCore.Services
                 var codeNumberLength = 0;
                 var newCode = "";
 
+                //Tạo code mới
                 if (maxCode == null || maxCode == "")
                 {
+                    //Trường hợp không có
                     newCode = "1";
                 }
                 else
                 {
+                    //lấy các chuỗi số từ mã cũ
                     var numArr = Regex.Split(maxCode, @"\D+");
 
+                    //Nếu string kết thúc bằng số thì lấy phần tử cuối cùng của mảng numArr + 1
                     if (Char.IsDigit(maxCode[^1]))
                     {
                         codeNumber = Int32.Parse(numArr[numArr.Length - 1]) + 1;
                         codeNumberLength = codeNumber.ToString().Length;
                     }
 
+                    //lấy prefix trước số
                     prefix = maxCode.Substring(0, maxCode.Length - codeNumberLength);
 
+                    //Code mới
                     newCode = prefix + codeNumber;
                 }
 
@@ -83,15 +88,20 @@ namespace MISA.ApplicationCore.Services
                 var defaultPageNumber = 1;
                 var defaultPageSize = 5;
 
+                //trim search string
+                employeeFilter = employeeFilter?.Trim(' ') ?? "";
+
                 if (pageNumber == null) pageNumber = defaultPageNumber;
                 if (pageSize == null) pageSize = defaultPageSize;
 
+                //cast trang sang int
                 var iPageNumber = (int)pageNumber;
                 var iPageSize = (int)pageSize;
 
                 if (iPageNumber <= 0) iPageNumber = defaultPageNumber;
                 if (iPageSize <= 0) iPageSize = defaultPageSize;
 
+                //Lấy dữ liêu từ repository
                 serviceResult.Data = await _repository.Filter(
                     iPageNumber,
                     iPageSize,

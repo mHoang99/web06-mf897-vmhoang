@@ -31,20 +31,20 @@ namespace MISA.ApplicationCore.Interfaces
         /// Thêm mới bản ghi
         /// </summary>
         /// <param name="entity">Thực thể theo kiểu T</param>
-        /// <returns>Thông tin trả về theo chuẩn RESTFUL</returns>
+        /// <returns>Thông tin trả về</returns>
         Task<ServiceResult> Add(T entity);
         /// <summary>
         /// Thay đổi bản ghi
         /// </summary>
         /// <param name="entity">Thực thể theo kiểu T</param>
         /// <param name="id">Khóa chính</param>
-        /// <returns>Thông tin trả về theo chuẩn RESTFUL</returns>
+        /// <returns>Thông tin trả vềL</returns>
         Task<ServiceResult> Update(string id, T entity);
         /// <summary>
         /// Xóa bản ghi
         /// </summary>
         /// <param name="id">Khóa chính</param>
-        /// <returns>Thông tin trả về theo chuẩn RESTFUL</returns>
+        /// <returns>Thông tin trả về</returns>
         Task<ServiceResult> Delete(string id);
         #endregion
     }

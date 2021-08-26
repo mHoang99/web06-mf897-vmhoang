@@ -76,6 +76,7 @@ namespace MISA.ApplicationCore
         {
             try
             {
+                //Kiểm tra kiểu dữ liệu Guid
                 if (CheckGuid($"id", id))
                 {
                     serviceResult.SuccessState = true;
@@ -101,6 +102,7 @@ namespace MISA.ApplicationCore
             {
                 entity.EntityState = Enums.EntityState.ADD;
 
+                //validate entity
                 var isValid = await Validate(entity);
                 if (!isValid)
                 {
@@ -111,6 +113,7 @@ namespace MISA.ApplicationCore
                 serviceResult.Data = await _repository.Add(entity);
                 serviceResult.MISACode = Enums.MISACode.IsValid;
 
+                //Không tác động được bản ghi
                 if (int.Parse(serviceResult.Data.ToString()) <= 0)
                 {
                     serviceResult = RowAffectingUnexpectedFailureResponse();
@@ -132,6 +135,7 @@ namespace MISA.ApplicationCore
         {
             try
             {
+                //kiểm tra id là guid
                 if (!CheckGuid($"id", id))
                 {
                     return serviceResult;
@@ -141,9 +145,10 @@ namespace MISA.ApplicationCore
 
                 entity.EntityState = Enums.EntityState.UPDATE;
 
+                //set id của entity thành parsedId
                 entity.GetType().GetProperty($"{typeof(T).Name}Id").SetValue(entity, parsedId);
 
-
+                //Lấy dữ liệu từ repository
                 var en = await _repository.GetEntityById(parsedId);
 
                 if (en == null)
@@ -155,6 +160,7 @@ namespace MISA.ApplicationCore
                     return serviceResult;
                 }
 
+                //validate entity
                 var isValid = await Validate(entity);
 
                 if (!isValid)
@@ -166,6 +172,7 @@ namespace MISA.ApplicationCore
                 serviceResult.Data = await _repository.Update(entity);
                 serviceResult.MISACode = Enums.MISACode.IsValid;
 
+                //Không tác động được bản ghi
                 if (int.Parse(serviceResult.Data.ToString()) <= 0)
                 {
                     serviceResult = RowAffectingUnexpectedFailureResponse();
@@ -186,6 +193,7 @@ namespace MISA.ApplicationCore
         {
             try
             {
+                //kiểm tra id là guid
                 if (!CheckGuid($"id", id))
                 {
                     return serviceResult;
@@ -193,6 +201,7 @@ namespace MISA.ApplicationCore
 
                 var parsedId = Guid.Parse(id);
 
+                //lấy enity từ repository
                 var entity = await _repository.GetEntityById(parsedId);
 
                 if (entity == null)
@@ -344,7 +353,6 @@ namespace MISA.ApplicationCore
         {
             var check = Guid.TryParse(toCheck, out _);
 
-            if (!check)
             if (!check)
             {
                 serviceResult.SuccessState = false;

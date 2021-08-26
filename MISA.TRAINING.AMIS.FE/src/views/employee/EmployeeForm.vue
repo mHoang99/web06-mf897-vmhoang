@@ -187,7 +187,6 @@
             id="txtPhoneNumber"
             type="text"
             displayName="ĐT di động"
-            fieldType="phone"
             value=""
             placeholder=""
             v-model.output="employeeDetails.PhoneNumber"
@@ -200,7 +199,6 @@
             id="txtTelephoneNumber"
             displayName="ĐT cố định"
             type="text"
-            fieldType="phone"
             value=""
             placeholder=""
             v-model.output="employeeDetails.TelephoneNumber"
@@ -213,7 +211,7 @@
             id="txtEmail"
             type="text"
             displayName="Email"
-            fieldType="email"
+            fieldType="email"   
             value=""
             placeholder=""
             v-model.output="employeeDetails.Email"
@@ -277,7 +275,7 @@
           id="btnDialogSave"
           @click="saveForm"
           v-tooltip.top="{
-            content: 'Cất',
+            content: 'Ctrl + S',
             theme: 'info-na-tooltip',
           }"
         >
@@ -288,7 +286,7 @@
           id="btnDialogSaveAndCreate"
           @click="saveFormAndCreate"
           v-tooltip.top="{
-            content: 'Cất và thêm',
+            content: 'Ctrl + Shift + S',
             theme: 'info-na-tooltip',
           }"
         >
@@ -337,7 +335,11 @@ import EmployeeService from "../../services/employee.service";
 import DepartmentComboBox from "../../components/base/combobox/department/Index.vue";
 import Formater from "../../common/format";
 import notificationMixin from "../../mixins/notification.mixin";
-import { EMPLOYEE_TEXT, POPUP_MESSAGE, TOAST_DURATION } from "../../resources/const";
+import {
+  EMPLOYEE_TEXT,
+  POPUP_MESSAGE,
+  TOAST_DURATION,
+} from "../../resources/const";
 
 /*
  * Component form nhân viên
@@ -416,9 +418,6 @@ export default {
   },
 
   created() {
-    //add event listeners vào document
-    document.removeEventListener("keyup", this.documentKeyup);
-    document.addEventListener("keyup", this.documentKeyup);
     //preload radio img
     const image = new Image();
     image.src = "../assets/icon/radio.svg";
@@ -431,6 +430,12 @@ export default {
      */
     async status(newValue) {
       if (newValue.isShow) {
+        //add event listeners vào document
+        document.removeEventListener("keyup", this.documentKeyup);
+        document.removeEventListener("keydown", this.documentKeydown);
+        document.addEventListener("keyup", this.documentKeyup);
+        document.addEventListener("keydown", this.documentKeydown);
+
         this.resetDetails();
 
         switch (newValue.formType) {
@@ -448,6 +453,10 @@ export default {
         }
 
         this.originalEmployeeDetails = { ...this.employeeDetails };
+      } else {
+        // xóa event listeners khỏi document
+        document.removeEventListener("keydown", this.documentKeydown);
+        document.removeEventListener("keyup", this.documentKeyup);
       }
     },
   },
@@ -667,20 +676,21 @@ export default {
       this.invalidRef = [];
 
       //Loop qua thông tin nhân viên
+      //Kiểm tra valid của từng input
       Object.entries(this.$refs).forEach(([key, el]) => {
         if (key.startsWith("input") || key.startsWith("cbx")) {
-          let value = el.$data.outputValue;
-
-          this.record[el.$attrs.name] = value;
-
+          //blur để input tự validate
           el.$el.querySelector("input").focus();
           el.$el.querySelector("input").blur();
 
+          //Nếu input ko hợp lệ
           if (!(el.$data.selfValid && el.$data.selfRequiredValid)) {
             this.invalidRef = [...this.invalidRef, el];
           }
         }
       });
+
+      //Kiểm tra những input không hợp lệ
       if (this.invalidRef.length > 0) {
         let msg =
           this.invalidRef[0].tooltip ?? this.invalidRef[0].$refs.input.tooltip;
@@ -700,10 +710,12 @@ export default {
       let res;
       let returnValue = false;
 
+      let objSent = { ...this.employeeDetails };
+
       //Loại bỏ trường rỗng ra khỏi object
-      Object.entries(this.employeeDetails).forEach(([key]) => {
-        if (!this.employeeDetails[key] && this.employeeDetails[key] !== 0) {
-          delete this.employeeDetails[key];
+      Object.entries(objSent).forEach(([key]) => {
+        if (!objSent[key] && objSent[key] !== 0) {
+          delete objSent[key];
         }
       });
 
@@ -714,14 +726,11 @@ export default {
         switch (this.status.formType) {
           case "add":
           case "clone":
-            res = await EmployeeService.create(this.employeeDetails);
+            res = await EmployeeService.create(objSent);
             break;
 
           case "edit":
-            res = await EmployeeService.edit(
-              this.status.selectedId,
-              this.employeeDetails
-            );
+            res = await EmployeeService.edit(this.status.selectedId, objSent);
             break;
 
           default:
@@ -744,6 +753,19 @@ export default {
       return returnValue;
     },
 
+    documentKeydown(e) {
+      if (e.keyCode === 83 && e.ctrlKey && e.shiftKey) {
+        e.preventDefault();
+        this.saveFormAndCreate();
+        return;
+      }
+      if (e.keyCode === 83 && e.ctrlKey) {
+        e.preventDefault();
+        this.saveForm();
+        return;
+      }
+    },
+
     documentKeyup(e) {
       switch (e.code) {
         case "Escape":
@@ -753,11 +775,6 @@ export default {
           break;
       }
     },
-  },
-
-  unmounted() {
-    // xóa event listeners khỏi document
-    document.addEventListener("keyup", this.documentKeyup);
   },
 };
 </script>

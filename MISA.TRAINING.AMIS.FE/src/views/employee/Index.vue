@@ -8,26 +8,25 @@
     />
     <base-table
       :table-data="table"
+      :is-loading="isReloading"
       paddingLeft="30px"
       paddingRight="30px"
       @edit-btn-click="changeFormStatus"
       @delete-btn-click="changeDeleteStatus"
       @clone-btn-click="changeFormStatus"
     />
-    <page-content-pagination
-      @paging-update="onPagingUpdate"
-      :paging="paging"
-      v-show="table.data.length > 0"
-    />
   </div>
+  <page-content-pagination
+    @paging-update="onPagingUpdate"
+    :paging="paging"
+    v-show="table.data.length > 0"
+  />
   <div class="content-outer-right" />
   <employee-form
     :status="RecordDetailsStatus"
     @status-change="changeFormStatus"
     @success="loadData"
   />
-
-  <the-loading :show="isReloading"></the-loading>
 
   <teleport to="#app">
     <delete-employee
@@ -46,7 +45,6 @@ import EmployeeForm from "./EmployeeForm.vue";
 import BaseTable from "../../components/base/table/Index.vue";
 import EmployeeService from "../../services/employee.service";
 import { mapActions } from "vuex";
-
 
 /*
  * Component trang nhân viên
@@ -177,9 +175,7 @@ export default {
       },
 
       recordFilter: {
-        searchVal: "",
-        departmentId: "",
-        positionId: "",
+        searchVal: ""
       },
 
       paging: {
@@ -238,6 +234,7 @@ export default {
       this.table.data = [];
 
       try {
+        //gọi API lấy dữ liệu phân trang
         let res = await EmployeeService.filter(
           this.paging.pageSize,
           this.paging.currentPage,
@@ -248,6 +245,7 @@ export default {
 
         //Xử lý
         if (res?.status == 200) {
+          //Kết quả trả về đúng
           this.table.data = [...res.data.Data];
           this.paging = {
             ...this.paging,
@@ -259,6 +257,7 @@ export default {
                 : 1,
           };
         } else {
+          //Kết quả trả về không đúng 
           this.table.data = [];
           this.paging = {
             ...this.paging,
@@ -304,7 +303,7 @@ export default {
 
     /**
      * Cập nhật paging
-     * @param {object} value 
+     * @param {object} value
      * CREATED_BY: VMHOANG (15/07/2021)
      */
     onPagingUpdate(value) {
@@ -315,7 +314,7 @@ export default {
 
     /**
      * Cập nhật filter
-     * @param {object} value 
+     * @param {object} value
      * CREATED_BY: VMHOANG (15/07/2021)
      */
     onFilterUpdate(value) {
@@ -335,8 +334,9 @@ export default {
   right: 0;
   left: 16px;
   top: 0;
-  padding: 68px 16px 0 0;
+  padding: 68px 16px 46px 0;
   scroll-behavior: smooth;
+  background-color: white;
 }
 
 .content .content-outer-right {

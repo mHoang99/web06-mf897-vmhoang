@@ -146,6 +146,13 @@ table .row-option > div > button[active=true] {
     width: 132px;
 }
 
+.table-loading {
+    position: relative;
+    position: sticky;
+    left: 0;
+    height: calc(100vh - 300px);
+}
+
 #contextMenuTableRow {
     transform: translateX(calc(-100% + 24px)) translateY(20px);
     padding: 2px 1px;

@@ -36,7 +36,7 @@ export const INPUT_WARNING = {
 //Thông điệp của toast
 export const TOAST_MESSAGE = {
     DELETE_SUCCESS: "Đã xóa thành công {0} <{1}>",
-    DEVELOPING: "Tính năng đang được phát triển"
+    DEVELOPING: "Tính năng đang được phát triển",
 }
 
 //Thời gian chờ của toast

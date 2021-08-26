@@ -29,7 +29,7 @@ class EmployeeService extends BaseService {
         employeeFilter = "",
     ) {
         try {
-            return axios
+            let res = await axios
                 .get(
                     this.BASE_ROUTE + this.FILTER,
                     {
@@ -40,6 +40,7 @@ class EmployeeService extends BaseService {
                         }
                     }
                 )
+            return res;
         }
         catch (error) {
             this.catchError(error);
@@ -54,10 +55,11 @@ class EmployeeService extends BaseService {
      */
     async getNewEmployeeCode() {
         try {
-            return axios
+            let res = await axios
                 .get(
                     this.BASE_ROUTE + this.GET_NEW
                 )
+            return res;
         }
         catch (error) {
             this.catchError(error);

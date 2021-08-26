@@ -54,6 +54,7 @@
     color: #111;
     line-height: 48px;
     text-transform: uppercase;
+    cursor: pointer;
 }
 
 .header .header-branch-option {
@@ -64,6 +65,7 @@
 /*account info*/
 .header .account-info {
     display: flex;
+    cursor: pointer;
 }
 
 .header .account-info .account-bell {

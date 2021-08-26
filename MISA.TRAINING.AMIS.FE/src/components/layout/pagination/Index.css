@@ -1,12 +1,12 @@
 .paging-bar {
-    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     height: 46px;
-    position: sticky;
-    left: 0px;
-    bottom: 0;
+    position: absolute;
+    left: 16px;
+    right: 16px;
+    bottom: 10px;
     background-color: white;
     z-index: 5;
     padding: 0 30px;

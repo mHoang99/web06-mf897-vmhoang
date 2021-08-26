@@ -27,7 +27,7 @@ namespace MISA.ApplicationCore.Interfaces
         /// <param name="pageNumber">Số trang</param>
         /// <param name="pageSize">Kích thước trang</param>
         /// <param name="employeeFilter">search string</param>
-        /// <returns></returns>
+        /// <returns>Thông tin trả về</returns>
         Task<ServiceResult> Filter(string employeeFilter, int? pageNumber, int? pageSize);
         #endregion
     }

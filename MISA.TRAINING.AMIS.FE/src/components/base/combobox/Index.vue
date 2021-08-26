@@ -352,8 +352,8 @@ export default {
      * CREATED_BY: VMHOANG (14/07/2021)
      */
     onInputBlur() {
-      //item không hợp lệ
-      if (this.selectedItemIndex <= 0) {
+      //kiểm tra hợp lệ
+      if (this.selectedItemIndex < 0) {
         this.itemValid = false;
         this.selfValid = false;
         //báo lỗi ra tooltip
@@ -367,6 +367,7 @@ export default {
           this.selfValid = true;
       }
 
+      //kiểm tra bắt buộc
       if (!this.inputValue && this.required) {
         this.selfRequiredValid = false;
         this.$refs.input.tooltip = INPUT_WARNING.CANT_BE_NULL.format(

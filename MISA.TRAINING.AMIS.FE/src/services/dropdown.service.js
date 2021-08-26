@@ -2,7 +2,7 @@ import axios from "axios";
 import Utils from "../common/utils";
 import pluralize from "pluralize";
 import store from "../store";
-import { TOAST_DURATION } from "../resources/const";
+import { MESSAGE, TOAST_DURATION } from "../resources/const";
 
 /**
  * Service lấy các giá trị của dropdown và combobox
@@ -24,20 +24,18 @@ class DropdownService {
      * @returns {Promise} response từ api
      */
     async getByFieldName(fieldName) {
-        return axios
-            .get("/v1/" + Utils.pascalize(pluralize(fieldName)))
-            .then(response => {
-                return response;
+        try {
+            let res = await axios
+                .get("/v1/" + Utils.pascalize(pluralize(fieldName)))
+            return res;
+        }
+        catch (error) {
+            store.dispatch("addNoti", {
+                type: "alert",
+                msg: error.response?.data?.UserMsg ?? MESSAGE.EXCEPTION,
+                duration: TOAST_DURATION
             })
-            .catch(error => {
-                if (error.response) {
-                    store.dispatch("addNoti", {
-                        type: "alert",
-                        msg: error.response.data.UserMsg,
-                        duration: TOAST_DURATION
-                    })
-                }
-            })
+        }
     }
 
 

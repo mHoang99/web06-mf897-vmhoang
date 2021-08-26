@@ -28,8 +28,8 @@ export default {
   bottom: 0;
   left: 0;
   right: 0;
-  opacity: 0.7;
-  background-color: black;
+  opacity: 0.5;
+  background-color: white;
   z-index: 50;
   /*display: none;*/
 }
@@ -45,7 +45,5 @@ export default {
 
 .loader img {
   animation: spin 2s linear infinite;
-  width: 60px;
-  height: 60px;
 }
 </style>
