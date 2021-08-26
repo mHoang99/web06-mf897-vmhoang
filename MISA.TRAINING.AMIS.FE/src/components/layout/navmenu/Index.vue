@@ -36,7 +36,7 @@
         }"
       >
         <div class="nav-item-icon sprite icon-money-bag"></div>
-        <div class="nav-item-text">Tiền mặt</div>
+        <div class="nav-item-text">Nhân viên</div>
       </router-link>
 
       <router-link
